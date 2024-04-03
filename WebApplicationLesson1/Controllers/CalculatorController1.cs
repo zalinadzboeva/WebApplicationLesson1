@@ -5,17 +5,17 @@ namespace WebApplication1.Controllers
 {
     public class CalculatorController : Controller
     {
-        public string Index(int a, int b, string c )
+        public string Index(int a, int b, char c)
         {
 
-               if(c== "+")
-                        return $"{a} + {b} = {a + b}";
+            if (c == '-')
+                return $"{a} -{b} = {a - b}";
+            if (c == '*')
+                return $"{a} * {b} = {a * b}";
+            if (c == '/' && b != 0)
+                return $"{a} / {b} = {a / b}";
 
-               if(c=="-")
-                        return $"{a} - {b} = {a - b}";
-               if(c == "*")
-                    return $"{a} * {b} = {a * b}";
-            
-            return "Ошибка операции";
+            return $"{a} + {b} = {a + b}";
         }
+    }
 }
